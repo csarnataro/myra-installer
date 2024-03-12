@@ -122,7 +122,8 @@ fn compile_sketch(sketch: &path::Path, to: &path::Path) -> anyhow::Result<()> {
         .join(file)
         .with_extension("ino.bin");
 
-    fs::copy(bin, to.join("sketch.bin"))?;
+    println!("Copying {:?} binary to {:?}", bin, to);
+    fs::copy(bin, to)?;
 
     Ok(())
 }
